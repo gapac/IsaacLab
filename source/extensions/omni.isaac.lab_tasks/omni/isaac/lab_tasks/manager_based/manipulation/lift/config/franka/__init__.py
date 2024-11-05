@@ -15,6 +15,7 @@ from . import agents, ik_abs_env_cfg, ik_rel_env_cfg, joint_pos_env_cfg
 # Joint Position Control
 ##
 
+
 gym.register(
     id="Isaac-Lift-Cube-Franka-v0",
     entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",

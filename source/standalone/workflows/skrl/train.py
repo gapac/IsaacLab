@@ -12,6 +12,7 @@ a more user-friendly way.
 
 """Launch Isaac Sim Simulator first."""
 
+
 import argparse
 import sys
 
