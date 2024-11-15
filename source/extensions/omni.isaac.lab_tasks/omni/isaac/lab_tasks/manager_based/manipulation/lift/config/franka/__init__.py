@@ -50,6 +50,7 @@ gym.register(
     kwargs={
         "env_cfg_entry_point": ik_abs_env_cfg.FrankaCubeLiftEnvCfg,
         "skrl_cfg_entry_point": f"{agents.__name__}:skrl_ppo_cfg.yaml",
+        "skrl_mappo_cfg_entry_point": f"{agents.__name__}:skrl_mappo_cfg.yaml",
     },
     disable_env_checker=True,
 )

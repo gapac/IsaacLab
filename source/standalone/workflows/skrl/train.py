@@ -144,6 +144,13 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
     # update log_dir
     log_dir = os.path.join(log_root_path, log_dir)
 
+    # Add TensorBoard logging configuration
+    agent_cfg["agent"]["experiment"]["write_interval"] = 100  # Log every 100 steps
+    agent_cfg["agent"]["experiment"]["tensorboard_log_dir"] = os.path.join(log_dir, "tensorboard")
+
+    # Ensure reward, loss, and episode length are logged
+    agent_cfg["agent"]["experiment"]["log_metrics"] = ["reward", "loss", "episode_length"]
+
     # dump the configuration into log-directory
     dump_yaml(os.path.join(log_dir, "params", "env.yaml"), env_cfg)
     dump_yaml(os.path.join(log_dir, "params", "agent.yaml"), agent_cfg)
